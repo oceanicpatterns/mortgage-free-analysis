@@ -60,6 +60,23 @@ Security guidance is documented in `SECURITY.md`.
 - PR template: `.github/pull_request_template.md`
 - Issue templates: `.github/ISSUE_TEMPLATE/*`
 
+## GitHub Pages + Streamlit
+
+GitHub Pages cannot run Streamlit directly (Pages is static hosting only).  
+This repo includes a Pages launch site in `docs/` that links to your deployed Streamlit app.
+
+1. In GitHub repo settings, go to `Pages`.
+2. Set source to:
+   - Branch: `main`
+   - Folder: `/docs`
+3. Save and wait for Pages to publish.
+4. Deploy Streamlit app (Community Cloud or other host) and copy its URL.
+5. Edit `docs/index.html`:
+   - Set `STREAMLIT_URL` to your deployed app URL.
+6. Commit and push.
+
+Then your Pages URL will act as your public website, with a button (and optional embed) for the Streamlit UI.
+
 ## Novice user journey
 
 1. Use sidebar `Inputs` for property, loan, rate, term, and annual costs.
